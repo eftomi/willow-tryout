@@ -7,7 +7,7 @@ Class {
 { #category : #accessing }
 ToDoApplication class >> applicationTitle [
 	
-	^ 'Mišetov ToDo!' 
+	^ 'My ToDo!' 
 ]
 
 { #category : #accessing }
@@ -36,10 +36,8 @@ ToDoApplication >> jQueryLibrary [
 { #category : #rendering }
 ToDoApplication >> renderButtonOn: aCanvas [
 	| button |
-"	button := AsynchronicButtonWebView labeled: 'krnek' applying: [ :aButton | aButton addClass bootstrap4 buttonPrimary ]."
-	button := AsynchronicButtonWebView labeled: 'krnek'.
-	button onTrigger executeOnClient: [ :canvas | canvas javascript alert: 'hej' ].
-"	button onTrigger evaluate: [ 'Some text' inspect ]."
+	button := AsynchronicButtonWebView labeled: 'Click me'.
+	button onTrigger executeOnClient: [ :canvas | canvas javascript alert: 'Button was clicked' ].
 	aCanvas render: button
 ]
 
